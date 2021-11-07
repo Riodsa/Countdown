@@ -1,0 +1,106 @@
+html , body {
+    padding: 0;
+    margin: 0;
+    background-color: lightgrey;
+    text-decoration: none;
+    font-family:cursive;
+    height: 100%;
+}
+.disclass {
+    display: inline-block;
+}
+.button1 {
+    background-color: grey;
+    padding: 20px;
+    margin: 20px;
+    float: left;
+    font-size: 50px;
+    margin-top: 11rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+.button1:hover {
+    transform: scale(1.1, 1.1);
+}
+.button2 {
+    float: right;
+    font-size: 50px;
+    background-color: grey;
+    padding: 20px;
+    margin: 20px;
+    margin-right: 7rem;
+    margin-top: 11rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+.button2:hover {
+    transform: scale(1.1, 1.1);
+}
+.item {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: -10px;
+    text-decoration: none;
+    color: black;
+    display:inline-block;
+    transform-origin: center;
+    transition-property: transform;
+    transition-duration: 1s;
+}
+.thisclass-class {
+    margin-top: 10px;
+}
+
+.item:hover {
+    transform: scale(1.1, 1.1);
+}
+.thisclass {
+    text-align: center;
+    font-size: 50px;
+}
+.box {
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin-left: 25%;
+    
+}
+.nextclass {
+margin-top: -135px;
+margin-right: 70px;
+font-size: 40px;
+float:right;
+}
+.boxtime {
+text-align: center;
+font-weight: bold;
+text-transform: uppercase;
+margin-top: -70px;
+}
+header {
+background-color: grey;
+padding: 20px;
+}
+.timeleft {
+font-size: 100px;
+}
+.time {
+float: right;
+font-size: 25px;
+margin-top: 0px;
+}
+.countdown {
+font-size: 17px;
+padding: 20px;
+display:inline-block;
+}
