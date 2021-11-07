@@ -168,7 +168,11 @@ function countdown(toThis)
     hours %= 24;
     minutes %= 60;
     seconds %= 60;
-
+    
+    hours = checkvalue(hours)
+    minutes = checkvalue(minutes)
+    seconds = checkvalue(seconds)
+       
     document.getElementById("hourleft").innerHTML = hours
     document.getElementById("minuteleft").innerHTML = minutes
     document.getElementById("secondleft").innerHTML = seconds
