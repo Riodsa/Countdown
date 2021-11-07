@@ -14,8 +14,10 @@ var endClass7 = new Date(yearnow,monthnow,datenow,14,20,1,0)
 var endClass8 = new Date(yearnow,monthnow,datenow,15,10,1,0)
 var endclass = new Date(yearnow,monthnow,datenow,16,0,1,0)
 var midnight = new Date(yearnow,monthnow,datenow,24,0,0,0)
+var timecheck = new Date(yearnow,monthnow,datenow,1,43,0,0)
 var timeleft
 var classname
+var nextclassname
 var KAB
 var timer
 var monday = ["นาฏศิลป์","พละ","คณิตเพิ่ม","คณิตเพิ่ม","พัก","สังคม","คณิตพื้น","เคมี","เคมี"]
@@ -23,14 +25,22 @@ var tuesday = ["ฟิสิกส์","ฟิสิกส์","ไทย","ค�
 var wednesday = ["การงาน","คณิตเพิ่ม","เคมี","อังกฤษพื้น","พัก","ว่าง","ว่าง","ว่าง"]
 var thrusday = ["คอม","คอม","ชีวะ","ชีวะ","พัก","คณิตเพิ่มพูน","คณิตเพิ่มพูน","ประวัติ","อังกฤษพื้น"]
 var friday = ["อังกฤษเพิ่ม","คณิตพื้น","ฟิสิกส์","ฟิสิกส์","พัก","ไทย","สังคม","เคมี","ว่าง"]  
-console.log(startclass.toLocaleString())
-console.log(endclass.toLocaleString())
-console.log(timenow.toLocaleString())
+console.log("startclass at " + startclass.toLocaleString())
+console.log("endclass at " + endclass.toLocaleString())
+
+var alertsound = document.getElementById("alertsound")
+
+function playSound(){
+    alertsound.play()
+}
+function pauseSound(){
+    alertsound.pauseSound()
+}
 
 timer = setInterval(function () {
     checktime();
-  }, 1000);
-
+}, 1000);
+  
 function checktime()
 {
     if(today >= 1 && today <= 5)
@@ -40,9 +50,14 @@ function checktime()
             console.log("Before Class")
             countdown(startclass)
             KAB = 0
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = "ยังไม่ถึงเวลาเรียน"
-            document.getElementById("KAB").innerHTML = KAB
-            
+            document.getElementById("KAB").innerHTML = ""
+            document.getElementById("BOKKAB").innerHTML = ""
+            document.getElementById("timeleftname").innerHTML = "จะเริ่มคาบแรกใน"
+            document.getElementById("nextclass").innerHTML = "คาบแรกวิชา" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= startclass.getTime()) && (timenow.getTime() < endClass1.getTime())) // กำลังเรียนคาบ1
         {
@@ -50,9 +65,13 @@ function checktime()
             countdown(endClass1)
             KAB = 1
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
-            document.getElementById("thisclass")
-            .innerHTML = classname
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
+            document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass1.getTime()) && (timenow.getTime() < endClass2.getTime())) // กำลังเรียนคาบ2
         {
@@ -60,8 +79,13 @@ function checktime()
             countdown(endClass2)
             KAB = 2
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(today)
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass3.getTime())) // กำลังเรียนคาบ3
         {
@@ -69,8 +93,13 @@ function checktime()
             countdown(endClass3)
             KAB = 3
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass4.getTime())) // กำลังเรียนคาบ4
         {
@@ -78,8 +107,13 @@ function checktime()
             countdown(endClass4)
             KAB = 4
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass5.getTime())) // กำลังเรียนคาบ5
         {
@@ -87,8 +121,13 @@ function checktime()
             countdown(endClass5)
             KAB = 5
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass6.getTime())) // กำลังเรียนคาบ6
         {
@@ -96,8 +135,13 @@ function checktime()
             countdown(endClass6)
             KAB = 6
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass7.getTime())) // กำลังเรียนคาบ7
         {
@@ -105,8 +149,13 @@ function checktime()
             countdown(endClass7)
             KAB = 7
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass8.getTime())) // กำลังเรียนคาบ8
         {
@@ -114,8 +163,13 @@ function checktime()
             countdown(endClass83)
             KAB = 8
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
+            nextclassname = checksubject(today,KAB)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = nextclassname
         }
         else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass9.getTime())) // กำลังเรียนคาบ9
         {
@@ -123,19 +177,24 @@ function checktime()
             countdown(endclass)
             KAB = 9
             document.getElementById("KAB").innerHTML = KAB
-            classname = checksubject(timenow.getDay())
+            classname = checksubject(today,KAB-1)
             document.getElementById("thisclass").innerHTML = classname
+            document.getElementById("BOKKAB").innerHTML = "คาบ "
+            document.getElementById("timeleftname").innerHTML = "timeleft"
+            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass-name").innerHTML = ""
         }
         else if(timenow.getTime() > endclass.getTime())
         {
             console.log("After Class")
             countdown(midnight)
             KAB = 10
-            document.getElementById("thisclass").innerHTML = "เลยเวลาเรียนแล้ว"
+            document.getElementById("thisclass").innerHTML = "เลิกเรียนแล้ว"
+            document.getElementById("BOKKAB").innerHTML = ""
+            document.getElementById("timeleftname").innerHTML = "Countdown to Midnight"
+            document.getElementById("nextclass").innerHTML = ""  
+            document.getElementById("nextclass-name").innerHTML = ""
         }
-        document.getElementById("timeleftname") = "timeleft"
-        document.getElementById("nextclass").innerHTML = "nextclass"
-        document.getElementById("BOKKAB").innerHTML = "คาบ"
     }
     else if((today == 0) || (today == 6))
     {
@@ -147,7 +206,7 @@ function checktime()
         document.getElementById("thisclass").innerHTML = "วันนี้ไม่มีเรียน"
         document.getElementById("timeleftname").innerHTML = "Countdown to Midnight"
         document.getElementById("nextclass").innerHTML = ""
-        ocument.getElementById("BOKKAB").innerHTML = ""
+        document.getElementById("BOKKAB").innerHTML = ""
     }
 }
 
@@ -168,11 +227,12 @@ function countdown(toThis)
     hours %= 24;
     minutes %= 60;
     seconds %= 60;
-    
+
     hours = checkvalue(hours)
     minutes = checkvalue(minutes)
     seconds = checkvalue(seconds)
-       
+
+
     document.getElementById("hourleft").innerHTML = hours
     document.getElementById("minuteleft").innerHTML = minutes
     document.getElementById("secondleft").innerHTML = seconds
@@ -184,16 +244,16 @@ function checkvalue(x){
     return x
 }
 
-function checksubject(datenow)
+function checksubject(datenow , KAB)
 {
     switch(datenow)
     {
-        case 0 : return "วันนี้ไม่มีเรียน"
-        case 1 : return monday[KAB]
-        case 2 : return tuesday[KAB]
-        case 3 : return wednesday[KAB]
-        case 4 : return thrusday[KAB]
-        case 5 : return friday[KAB]
-        case 6 : return "วันนี้ไม่มีเรียน"
+        case 0 : return "วันนี้ไม่มีเรียน"; break;
+        case 1 : return monday[KAB];  break;
+        case 2 : return tuesday[KAB];  break;
+        case 3 : return wednesday[KAB]; break;
+        case 4 : return thrusday[KAB];  break;
+        case 5 : return friday[KAB];  break;
+        case 6 : return "วันนี้ไม่มีเรียน";  break;
     }
 }
