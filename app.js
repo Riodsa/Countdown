@@ -181,7 +181,7 @@ function checktime()
             document.getElementById("thisclass").innerHTML = classname
             document.getElementById("BOKKAB").innerHTML = "คาบ "
             document.getElementById("timeleftname").innerHTML = "timeleft"
-            document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
+            document.getElementById("nextclass").innerHTML = "" 
             document.getElementById("nextclass-name").innerHTML = ""
         }
         else if(timenow.getTime() > endclass.getTime())
