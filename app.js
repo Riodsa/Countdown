@@ -101,7 +101,7 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass4.getTime())) // กำลังเรียนคาบ4
+        else if((timenow.getTime() >= endClass3.getTime()) && (timenow.getTime() < endClass4.getTime())) // กำลังเรียนคาบ4
         {
             console.log("Onclass")
             countdown(endClass4)
@@ -115,7 +115,7 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass5.getTime())) // กำลังเรียนคาบ5
+        else if((timenow.getTime() >= endClass4.getTime()) && (timenow.getTime() < endClass5.getTime())) // กำลังเรียนคาบ5
         {
             console.log("Onclass")
             countdown(endClass5)
@@ -129,7 +129,7 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass6.getTime())) // กำลังเรียนคาบ6
+        else if((timenow.getTime() >= endClass5.getTime()) && (timenow.getTime() < endClass6.getTime())) // กำลังเรียนคาบ6
         {
             console.log("Onclass")
             countdown(endClass6)
@@ -143,7 +143,7 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass7.getTime())) // กำลังเรียนคาบ7
+        else if((timenow.getTime() >= endClass6.getTime()) && (timenow.getTime() < endClass7.getTime())) // กำลังเรียนคาบ7
         {
             console.log("Onclass")
             countdown(endClass7)
@@ -157,10 +157,10 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass8.getTime())) // กำลังเรียนคาบ8
+        else if((timenow.getTime() >= endClass7.getTime()) && (timenow.getTime() < endClass8.getTime())) // กำลังเรียนคาบ8
         {
             console.log("Onclass")
-            countdown(endClass8)
+            countdown(endClass83)
             KAB = 8
             document.getElementById("KAB").innerHTML = KAB
             classname = checksubject(today,KAB-1)
@@ -171,7 +171,7 @@ function checktime()
             document.getElementById("nextclass").innerHTML = "คาบต่อไป" 
             document.getElementById("nextclass-name").innerHTML = nextclassname
         }
-        else if((timenow.getTime() >= endClass2.getTime()) && (timenow.getTime() < endClass9.getTime())) // กำลังเรียนคาบ9
+        else if((timenow.getTime() >= endClass8.getTime()) && (timenow.getTime() < endclass.getTime())) // กำลังเรียนคาบ9
         {
             console.log("Onclass")
             countdown(endclass)
