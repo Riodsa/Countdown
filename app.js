@@ -160,7 +160,7 @@ function checktime()
         else if((timenow.getTime() >= endClass7.getTime()) && (timenow.getTime() < endClass8.getTime())) // กำลังเรียนคาบ8
         {
             console.log("Onclass")
-            countdown(endClass83)
+            countdown(endClass8)
             KAB = 8
             document.getElementById("KAB").innerHTML = KAB
             classname = checksubject(today,KAB-1)
