@@ -7,15 +7,18 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
-        <div>
-            <a class="button1" alt="googlemeet" href="googlemeet.html">   Google Meet  </a>
-            <a class="button2" alt="countdown" href="Timeleft.html"> Timeleft </a>
+    <body onload="countingtime()">
+        <div id="loader"></div>
+        <div id="myDiv" class="animate-bottom"  style="display:none;">
+            <div>
+                <a class="button1" alt="googlemeet" href="googlemeet.html">   Google Meet  </a>
+                <a class="button2" alt="countdown" href="Timeleft.html"> Timeleft </a>
+            </div>
+            <div class="box">
+                <video class="troll" src="rickroll.mp4" controls></video>
+            </div>
+            
         </div>
-        <div class="box">
-            <video class="troll" src="rickroll.mp4" controls></video>
-        </div>
-        
         <script src="app.js"></script>
     </body>
 </html>

@@ -27,7 +27,15 @@ var thrusday = ["คอม","คอม","ชีวะ","ชีวะ","พัก
 var friday = ["อังกฤษเพิ่ม","คณิตพื้น","ฟิสิกส์","ฟิสิกส์","พัก","ไทย","สังคม","เคมี","ว่าง"]  
 console.log("startclass at " + startclass.toLocaleString())
 console.log("endclass at " + endclass.toLocaleString())
+var myVar;
+function countingtime() {
+  myVar = setTimeout(showPage, 850);
+}
 
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 var alertsound = document.getElementById("alertsound")
 
 function playSound(){
@@ -160,7 +168,7 @@ function checktime()
         else if((timenow.getTime() >= endClass7.getTime()) && (timenow.getTime() < endClass8.getTime())) // กำลังเรียนคาบ8
         {
             console.log("Onclass")
-            countdown(endClass8)
+            countdown(endClass83)
             KAB = 8
             document.getElementById("KAB").innerHTML = KAB
             classname = checksubject(today,KAB-1)
