@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Timeleft</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body onload="countingtime()">
+        <div id="loader"></div>
+        <div id="myDiv" class="animate-bottom"  style="display:none;">
+            <header>
+                <a href="https://github.com/Riodsa/Countdown"><img src="GitHub-Mark.png" class="logo"></a>
+                <a class="item" href="index.html" alt="home">Home</a>
+                <a class="item" href="googlemeet.html" alt="googlemeet">Google Meet</a>
+                <a class="item" href="Timeleft.html" alt="Timeleft">Timeleft</a>
+                <div class="time" id="time"></div>
+            </header>
+    
+            <div class="thisclass">
+                <div class="disclass"><span id="BOKKAB"></span><span id="KAB"></span><p class="thisclass-class"id="thisclass"></p></div>
+            </div>
+            <div class="boxtime">
+                <h1 style="font-size: 35px; margin-top: 9rem;margin-bottom: -25px;"><span id="timeleftname"></span></h1>
+                <div class=countdown><span class="timeleft" id="hourleft"    ></span><br>ชั่วโมง</div>
+                <div class=countdown><span class="timeleft" id="minuteleft"  ></span><br>นาที</div>
+                <div class=countdown><span class="timeleft" id="secondleft"  ></span><br>วินาที</div>
+            </div>
+            <div class="nextclass">
+                <span id="nextclass"></span>
+                <span id="nextclass-name"></span>
+            </div>
+        </div>
+        <audio id="alertsound"><source src="SoundAlert.mp3"></audio>
+        
+        <script src="app.js"></script>
+    </body>
+</html>
